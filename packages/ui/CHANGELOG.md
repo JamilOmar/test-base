@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/JamilOmar/test-base/compare/@labshare/base-ui@0.2.0...@labshare/base-ui@0.3.0) (2021-03-12)
+
+
+### Features
+
+* version ([180eb65](https://github.com/JamilOmar/test-base/commit/180eb65b9962a69b75664cb6b60b30ae0a070fb5))
+
+
+
+
+
 # [0.2.0](https://github.com/JamilOmar/test-base/compare/@labshare/base-ui@0.1.1...@labshare/base-ui@0.2.0) (2021-03-12)
 
 
