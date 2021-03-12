@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.2](https://github.com/JamilOmar/test-base/compare/my-lib@0.5.1...my-lib@0.5.2) (2021-03-12)
+
+
+### Bug Fixes
+
+* versions ([0333daa](https://github.com/JamilOmar/test-base/commit/0333daa1249e5d44898683b2dc7a08a0a57c67dd))
+
+
+
+
+
 ## [0.5.1](https://github.com/JamilOmar/test-base/compare/my-lib@0.5.0...my-lib@0.5.1) (2021-03-12)
 
 
