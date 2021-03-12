@@ -1,12 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "newProjectRoot": "ui",
+  "newProjectRoot": "projects",
   "projects": {
     "@labshare/base-ui": {
       "projectType": "library",
       "root": "",
-      "sourceRoot": "ui",
+      "sourceRoot": "",
       "prefix": "ls",
       "architect": {
         "build": {
@@ -17,24 +17,24 @@
           },
           "configurations": {
             "production": {
-              "tsConfig": "ui/tsconfig.lib.prod.json"
+              "tsConfig": "tsconfig.lib.prod.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "ui/test.ts",
-            "tsConfig": "ui/tsconfig.spec.json",
-            "karmaConfig": "ui/karma.conf.js"
+            "main": "test.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "ui/tsconfig.lib.json",
-              "ui/tsconfig.spec.json"
+              "tsconfig.lib.json",
+              "tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

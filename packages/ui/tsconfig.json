@@ -11,7 +11,6 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
-    "rootDir": "ui",
     "typeRoots": [
       "node_modules/@types"
     ],
@@ -20,7 +19,7 @@
       "dom"
     ],
     "paths": {
-      "@labshare/base-ui/*": ["ui/*/public_api"]
+      "@labshare/base-ui/*": ["public_api"]
     }
   },
   "angularCompilerOptions": {

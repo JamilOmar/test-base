@@ -1,8 +1,12 @@
 {
   "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
   "dest": "./dist",
-  "assets": ["./ui/assets", "./ui/scss"],
+  "assets": ["./assets", "./scss"],
   "lib": {
-    "entryFile": "ui/public_api.ts"
-  }
+    "entryFile": "public_api.ts"
+  },
+  "whitelistedNonPeerDependencies": [
+    "@angular/localize",
+    "ngx-avatar"
+  ]
 }

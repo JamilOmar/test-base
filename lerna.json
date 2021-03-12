@@ -1,10 +1,9 @@
 {
   "packages": [
     "packages/ui/",
-    "packages/api/services-auth",
-    "packages/api/services-logger",
-    "packages/api/services-cache",
-    "packages/cli/services/"
+    "packages/my-lib/",
+    "packages/api/services-logger"
+
   ],
   "version": "independent",
   "command": {
