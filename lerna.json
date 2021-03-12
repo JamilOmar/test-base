@@ -15,8 +15,7 @@
       "conventionalCommits": true,
       "message": "chore: publish release",
       "concurrency": 8,
-      "ignoreChanges": [],
-      "yes": true
+      "ignoreChanges": []
     },
     "publish": {
       "yes": true
