@@ -1,0 +1,7 @@
+<div class="ls-menu">
+  <ul class="ls-menu-group">
+    <li class="ls-menu-group-item" *ngFor="let item of items" [routerLink]="item.link" routerLinkActive="active">
+      <i *ngIf="item.icon" class="{{ item.icon }}"></i>{{ item.text }}
+    </li>
+  </ul>
+</div>

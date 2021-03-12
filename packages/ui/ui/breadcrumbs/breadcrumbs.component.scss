@@ -1,0 +1,11 @@
+$separatorPadding: 8px;
+
+.breadcrumb-wrapper {
+  .breadcrumb {
+    cursor: pointer;
+  }
+
+  .separator {
+    padding: 0 $separatorPadding;
+  }
+}

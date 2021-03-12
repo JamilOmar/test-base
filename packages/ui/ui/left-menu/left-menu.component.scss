@@ -1,0 +1,33 @@
+@import "../scss/variables.scss";
+
+$left-menu-width: 300px;
+
+.ls-menu {
+  width: $left-menu-width;
+  background-color: $left-menu-background-color;
+  border-right: 1px solid $left-menu-border-color;
+
+  :focus {
+    outline: 0px;
+  }
+
+  .ls-menu-group {
+    .ls-menu-group-item {
+      list-style: none;
+      padding: 20px;
+
+      &.active {
+        background-color: $left-menu-active-background-color;
+      }
+
+      i {
+        margin-right: 10px;
+      }
+
+      a {
+        color: $left-menu-text-color;
+        text-decoration: none;
+      }
+    }
+  }
+}

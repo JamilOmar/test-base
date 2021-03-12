@@ -1,0 +1,12 @@
+node_modules/
+dist/
+coverage/
+**/*.d.ts
+packages/api/config/providers/
+packages/ui/
+packages/*/*/node_modules
+packages/*/*/dist
+packages/*/*/coverage
+packages/*/*/*.d.ts
+*.ts
+commitlint.config.js

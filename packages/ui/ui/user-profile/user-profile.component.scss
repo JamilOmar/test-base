@@ -1,0 +1,111 @@
+$font-color: #818181;
+$background-color: #edf0f5;
+
+.ls-user-profile {
+  span {
+    span {
+      img {
+        vertical-align: middle;
+        border-style: none;
+        width: 1.6rem;
+        border-radius: 50px;
+        height: 1.6rem;
+      }
+    }
+  }
+
+  .user-info {
+    span {
+      img {
+        vertical-align: middle;
+        border-style: none;
+        width: 3rem;
+        border-radius: 50px;
+        height: 3rem;
+      }
+    }
+  }
+
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 3px 6px #00000029;
+    width: 19.5rem;
+  }
+
+  .profile-container {
+    h3, i, .profile-name {
+      color: #000;
+    }
+  }
+  
+  .profile-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .profile-close {
+    cursor: pointer;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .user-info {
+    display: flex;
+    flex-direction: row;
+    background-color: $background-color;
+  }
+
+  .profile-name {
+    font-size: 1.375rem;
+    a {
+      color: black;
+    }
+  }
+
+  .profile-email {
+    color: $font-color;
+  }
+
+  .view-account {
+    color: $font-color;
+    padding-top: 0.5rem;
+    a {
+      color: $font-color;
+    }
+  }
+
+  .profile-link {
+    display: block;
+    width: 100%;
+    clear: both;
+    font-weight: 400;
+    color: $font-color;
+    border: 0;
+  }
+
+  .profile-container .icon-lsi-user {
+    font-size: 2rem;
+  }
+
+  .sign-out {
+    cursor: pointer;
+    color: $font-color;
+    background-color: $background-color;
+  }
+
+  .header-right-icon {
+    border-right: none;
+  }
+
+  .dropdown-toggle::after {
+    display: none;
+  }
+
+  .dropdown-menu {
+    border: none;
+  }
+}

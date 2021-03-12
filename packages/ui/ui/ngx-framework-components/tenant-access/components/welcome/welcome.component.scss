@@ -1,0 +1,18 @@
+@import '../../../../scss/variables.scss';
+@import '../../../scss/layout-content.scss';
+
+.welcome {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.button-create-team {
+    @extend .button-size;
+    width: 13rem;
+    border-radius: 25px;
+    border-color: $button-border-color;
+    background-color: $button-background-color;
+    font-size: 1rem;
+    color: $button-text-color;
+}

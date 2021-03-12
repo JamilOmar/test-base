@@ -1,0 +1,54 @@
+<div>
+  <h1>{{ captions.title }}</h1>
+  <form [formGroup]="createTenantForm">
+    <div class="form-group">
+      <label>{{ captions.name }}</label>
+      <input type="text" class="form-control" formControlName="title" (keyup)="slugifyInput()" />
+      <div *ngIf="createTenantForm.controls.title.invalid">
+        <div class="invalid-feedback" *ngIf="createTenantForm.controls.title.errors.required">{{ captions.nameRequiredMessage }}</div>
+        <div class="invalid-feedback" *ngIf="createTenantForm.controls.title.errors.pattern">
+          {{ captions.nameSpecialCharacterMessage }}
+        </div>
+        <div class="invalid-feedback" *ngIf="createTenantForm.controls.title.errors.maxlength">
+          {{ characterLimitMessage.replace('{characterLength}', fieldLengthLimits.TeamName.toString()) }}
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>{{ captions.uniqueTag }}</label>
+      <input type="text" class="form-control" formControlName="id" (keyup)="resetUniqueValidation()" />
+      <div *ngIf="createTenantForm.controls.id.invalid">
+        <div class="invalid-feedback" *ngIf="createTenantForm.controls.id.errors.required">
+          {{ captions.uniqueTagRequiredMessage }}
+        </div>
+        <div class="invalid-feedback" *ngIf="createTenantForm.controls.id.errors.exists">
+          {{ captions.uniqueTagExistsMessage }}
+        </div>
+        <div class="invalid-feedback" *ngIf="createTenantForm.controls.id.errors.pattern">
+          {{ captions.idSpecialCharacterMessage }}
+        </div>
+        <div class="invalid-feedback" *ngIf="createTenantForm.controls.id.errors.maxlength">
+          {{ characterLimitMessage.replace('{characterLength}', fieldLengthLimits.ShortName.toString()) }}
+        </div>
+      </div>
+    </div>
+
+    <button class="btn btn-outline-primary mt-4" (click)="goToPreviousStep()">{{ captions.buttonBack }}</button>
+    <button (click)="createTeam()" [disabled]="!createTenantForm.valid || disableCreateButton" class="btn btn-primary float-right mt-4">
+      {{ captions.buttonCreate }}
+    </button>
+  </form>
+</div>
+
+<ng-template #contentModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Error!</h4>
+  </div>
+  <div class="modal-body">
+    <p>{{message}}</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" ngbAutofocus class="btn btn-outline-primary" (click)="modal.close('Close click')">{{captions.buttonOk}}</button>
+  </div>
+</ng-template>

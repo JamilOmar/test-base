@@ -1,0 +1,13 @@
+<div ngbDropdown class="ls-drop-menu">
+  <span *ngIf="element === 'text'" ngbDropdownToggle data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+    class="header-right-icon header-right-text">
+    {{ text }}
+  </span>
+  <span class="header-right-icon" *ngIf="element === 'i'" ngbDropdownToggle data-toggle="dropdown" aria-haspopup="true"
+    aria-expanded="false" class="header-right-icon">
+    <i [className]="icon"></i>
+  </span>
+  <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+    <a class="dropdown-item" type="button" *ngFor="let link of menu" href="{{ link.url }}">{{ link.text }}</a>
+  </div>
+</div>

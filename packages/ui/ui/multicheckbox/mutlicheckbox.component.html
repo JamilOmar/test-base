@@ -1,0 +1,14 @@
+<div class="ls-multicheckbox">
+    <div *ngFor="let option of options; let i = index;">
+        <ng-template #defaultTemplate let-item>
+            <label>
+                <input type="checkbox" (change)="change()" [(ngModel)]="selected[i]" [disabled]="disabled">
+                <span>{{item}}</span>
+            </label>
+        </ng-template>
+
+        <ng-container [ngTemplateOutlet]="itemTemplate ? itemTemplate : defaultTemplate"
+            [ngTemplateOutletContext]="{ $implicit: (display ? option[display] : option), index: i, option: option}">
+        </ng-container>
+    </div>
+</div>

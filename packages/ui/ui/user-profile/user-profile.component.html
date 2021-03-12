@@ -1,0 +1,68 @@
+<div ngbDropdown display="dynamic" placement="bottom-right" class="ls-user-profile">
+  <span
+    class="header-right-icon"
+    ngbDropdownToggle
+    data-toggle="dropdown"
+    aria-haspopup="true"
+    aria-expanded="false"
+    class="header-right-icon"
+    *ngIf="isLoggingEnable"
+  >
+    <ng-container *ngIf="userProfile?.pictureUrl else iconDefault">
+      <span>
+        <img class="profile-image" src="{{userProfile.pictureUrl}}" alt="Picture of user">
+      </span>
+    </ng-container>
+    <ng-template #iconDefault>
+      <i class="icon-lsi-user"></i>
+    </ng-template>
+  </span>
+  <div ngbDropdownMenu class="dropdown-menu dropdown-menu-right">
+    <div class="profile-container">
+      <div class="profile-header px-3 pt-3">
+        <div>
+          <h3>{{ captions.ProfileLabel }}</h3>
+        </div>
+        <div class="profile-close" ngbDropdownToggle>
+          <i class="fa fa-times"></i>
+        </div>
+      </div>
+
+      <div class="user-info p-3">
+        <div class="mr-3">
+          <ng-container *ngIf="userProfile?.pictureUrl else iconDefault">
+            <span>
+              <img src="{{userProfile.pictureUrl}}" alt="Picture of user">
+            </span>
+          </ng-container>
+          <ng-template #iconDefault>
+            <i class="icon-lsi-user"></i>
+          </ng-template>
+        </div>
+
+        <div>
+          <div class="profile-name">
+            <a href="javascript:void(0)" (click)="editProfile()"  *ngIf="!disableLink else noLink">{{ userProfile?.name }}</a>
+            <ng-template #noLink>
+              {{ userProfile?.name }}
+            </ng-template>
+          </div>
+          <div class="profile-email">
+            {{ userProfile?.email }}
+          </div>
+          <div class="view-account">
+            <a href="javascript:void(0)" (click)="viewAccount()" *ngIf="!disableViewDashboardLink">{{ captions.ViewDashboardLabel }}</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-2 mb-2 mx-3">
+        <a *ngFor="let link of links" class="profile-link" href="{{ link.url }}">{{ link.text }}</a>
+      </div>
+
+      <div (click)="signOut()" class="sign-out p-3">
+        {{ captions.SignOutLabel }}
+      </div>
+    </div>
+  </div>
+</div>

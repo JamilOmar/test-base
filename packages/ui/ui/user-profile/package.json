@@ -1,0 +1,15 @@
+{
+    "ngPackage": {
+        "lib": {
+            "entryFile": "public_api.ts"
+        }
+    },
+    "peerDependencies": {
+        "@angular/common": ">=9.1.0 || >=10.0.0",
+        "@angular/core": ">=9.1.0 || >=10.0.0",
+        "@ng-bootstrap/ng-bootstrap": ">=6.1.0",
+        "@labshare/ngx-core-services": ">=3.5.0",
+        "@labshare/ls-font": ">=1.0.0",
+        "rxjs": ">=6.5.4"
+    }
+}

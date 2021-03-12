@@ -1,0 +1,14 @@
+<div class="ls-card-container">
+
+    <ng-template ngFor let-item [ngForOf]="value" let-i="index" let-l="last">
+        <div class="ls-card-parent" tabindex="0" [ngClass]="{'ls-card-highlight':isSelected(item)}"
+            (click)="onItemClick($event,item,i)" role="option" (dblclick)="onDoubleClick(item)"
+            [attr.aria-selected]="isSelected(item)">
+            <div class="ls-card-overlay"></div>
+            <div class="ls-card">
+                <ng-container *ngTemplateOutlet="itemTemplate; context: {$implicit: item, index: i}"></ng-container>
+            </div>
+        </div>
+    </ng-template>
+
+</div>

@@ -1,0 +1,73 @@
+<div class="row welcome-screen-root">
+  <div class="col-5">
+    <ls-lib-welcome-block></ls-lib-welcome-block>
+  </div>
+  <div class="col-7">
+    <h1>Add Team Members</h1>
+
+    <form [formGroup]="teamForm">
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control" formControlName="email" />
+        <div class="invalid-feedback" *ngIf="email.invalid">Valid email is required</div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-6">
+          <label>First Name <span class="sub-label">(Optional)</span></label>
+          <input type="text" class="form-control" formControlName="firstName" />
+        </div>
+        <div class="form-group col-6">
+          <label>Last Name <span class="sub-label">(Optional)</span></label>
+          <input type="text" class="form-control" formControlName="lastName" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Assign Role</label>
+        <select class="form-control" formControlName="role">
+          <option hidden value="" disabled selected>--Select Role--</option>
+          <option *ngFor="let group of groupList" [value]="group.name"> {{ group.name }} </option>
+        </select>
+        <div class="invalid-feedback" *ngIf="role.invalid">Role is required</div>
+      </div>
+
+      <div class="form-group">
+        <label>Assign Login Provider</label>
+        <select class="form-control" formControlName="identityIssuer">
+          <option hidden value="" disabled selected>--Select Provider--</option>
+          <option *ngFor="let provider of providerList" [value]="provider.identityIssuer"> {{ provider.id }} </option>
+        </select>
+        <div class="invalid-feedback" *ngIf="identityIssuer.invalid">Provider is required</div>
+      </div>
+
+      <button class="btn btn-outline-primary mt-4" [disabled]="!teamForm.valid" (click)="addUser()">Add to Team</button>
+
+      <div class="team-members-container" *ngIf="users.length > 0">
+        <h5>Team Members</h5>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Email</th>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Role</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let user of users">
+              <td>{{ user.email }}</td>
+              <td>{{ user.firstName }}</td>
+              <td>{{ user.lastName }}</td>
+              <td>{{ user.role }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <button class="btn btn-outline-primary mt-4" (click)="goToPreviousStep()">Back</button>
+      <button (click)="goToNextStep()" class="btn btn-primary float-right mt-4">Continue</button>
+    </form>
+  </div>
+</div>

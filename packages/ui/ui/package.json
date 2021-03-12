@@ -1,0 +1,17 @@
+{
+  "name": "@labshare/base-ui",
+  "version": "1.10.4",
+  "main": "bundles/labshare-base-ui.umd.js",
+  "module": "fesm5/labshare-base-ui.js",
+  "es2015": "fesm2015/labshare-base-ui.js",
+  "esm5": "esm5/labshare-base-ui.js",
+  "esm2015": "esm2015/labshare-base-ui.js",
+  "fesm5": "fesm5/labshare-base-ui.js",
+  "fesm2015": "fesm2015/labshare-base-ui.js",
+  "typings": "labshare-base-ui.d.ts",
+  "metadata": "labshare-base-ui.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

@@ -1,0 +1,32 @@
+@import '../../../scss/layout-content.scss';
+@import "~bootstrap/scss/_functions.scss";
+@import "~bootstrap/scss/_variables.scss";
+@import "~bootstrap/scss/mixins/_breakpoints.scss";
+
+@mixin space {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+@include media-breakpoint-up(xs) { 
+  .profile {
+    @include space;
+  };
+  h1 {
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    font-size: 2.3rem;
+  }
+}
+@include media-breakpoint-up(sm) { 
+  .profile {
+    @include space;
+  };
+}
+@include media-breakpoint-up(md) { 
+  .profile {
+    @include space;
+  };
+}
+@include media-breakpoint-up(lg) {  }
+@include media-breakpoint-up(xl) {  }

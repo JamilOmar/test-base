@@ -1,0 +1,34 @@
+{
+  "packages": [
+    "packages/ui/",
+    "packages/api/services-auth",
+    "packages/api/services-logger",
+    "packages/api/services-cache",
+    "packages/cli/services/"
+  ],
+  "version": "independent",
+  "command": {
+    "bootstrap": {
+      "concurrency": 8,
+      "forceLocal": true
+    },
+    "version": {
+      "conventionalCommits": true,
+      "message": "chore: publish release",
+      "concurrency": 8,
+      "ignoreChanges": []
+    },
+    "run": {
+      "prefix": false,
+      "loglevel": "silent",
+      "stream": true,
+      "concurrency": 8,
+      "sort": false
+    },
+    "clean": {
+      "loglevel": "silent",
+      "concurrency": 8,
+      "yes": true
+    }
+  }
+}

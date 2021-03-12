@@ -1,0 +1,29 @@
+<table class="ls-dualselect">
+    <tr>
+        <td class="select-column">
+            <select size="10" (change)="checkButtons()" [(ngModel)]="selectedLeft" multiple
+                [disabled]="disabled">
+                <option *ngFor="let option of allOptions" (dblclick)="add()" [ngValue]="option">
+                    {{display ? option[display] : option}}</option>
+            </select>
+        </td>
+        <td class="middle-column">
+            <button (click)="remove()" [disabled]="disabled || disabledRemove">&lt;</button>
+            <br />
+            <button (click)="add()" [disabled]="disabled || disabledAdd">&gt;</button>
+            <br />
+            <button (click)="addAll()" [disabled]="disabled || disabledAddAll">&gt;&gt;</button>
+            <br />
+            <button (click)="removeAll()" [disabled]="disabled || disabledRemoveAll">&lt;&lt;</button>
+        </td>
+        <td class="select-column">
+            <select size="10" [(ngModel)]="selectedRight" (change)="checkButtons()" multiple
+                [disabled]="disabled">
+                <option *ngFor="let option of selection" (dblclick)="remove()" [ngValue]="option">
+                    {{display ? option[display] : option}}</option>
+            </select>
+            <button (click)="shiftUp()" [disabled]="disabled || disabledUp">Move Up</button>
+            <button (click)="shiftDown()" [disabled]="disabled || disabledDown">Move Down</button>
+        </td>
+    </tr>
+</table>

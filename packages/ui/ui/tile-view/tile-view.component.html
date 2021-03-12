@@ -1,0 +1,7 @@
+<div class="ls-tile-view-content">
+    <ng-container *ngFor="let item of items; index as i">
+        <div (click)="click(i)" [ngClass]="{'selected': i == selectedIndex}" class="ls-tile">
+            <ng-container *ngTemplateOutlet="itemTemplate; context: {$implicit: item}"></ng-container>
+        </div>
+    </ng-container>
+</div>

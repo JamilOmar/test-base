@@ -1,0 +1,45 @@
+import {Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import {moduleMetadata} from '@storybook/angular';
+import {CommonModule} from '@angular/common';
+import {RouterModule} from '@angular/router';
+
+
+<Meta title="Services|Tenant Switching">
+</Meta>
+
+# Tenant Switching
+
+The switch tenant functionality in ngx-framework-components is a more specific implementation of 
+ngx-core-services version designed to meet the needs of the metadata ui application. 
+
+Please read how to setup your application for the switch tenant functionality before following the more 
+specific implementation below.
+[https://github.com/LabShare/ngx-core-services/tree/master/projects/ngx-core-services/src/lib/tenant#tenant-switching-overview](https://github.com/LabShare/ngx-core-services/tree/master/projects/ngx-core-services/src/lib/tenant#tenant-switching-overview)
+
+
+The switch tenant functionality in ngx-framework-components works in conjunction with the 
+[event service](https://github.com/LabShare/ngx-core-services/tree/master/projects/ngx-core-services/src/lib/events).
+One example is a host app that subscribes to `EventKeys.SelectTenant` event and `CoreServicesEventKeys.SwitchTenant` 
+event. If any of those events are published, it calls the switch tenant function to initiate that process. 
+`EventKeys.SelectTenant` event is part of the [left menu component](https://github.com/LabShare/ngx-base-components/tree/master/projects/ngx-base-components/src/lib/components/left-menu) 
+in ngx-base-components while `CoreServicesEventKeys.SwitchTenant` 
+event is a general [event](https://github.com/LabShare/ngx-core-services/blob/master/projects/ngx-core-services/src/lib/global/global.keys.ts) used to switch between tenants.
+
+The functionality is located in [TenantManager Service](https://github.com/LabShare/ngx-framework-components/blob/master/projects/ngx-framework-components/src/lib/services/tenant.manager.service.ts).
+The relevant functions are `handleSelectTenantEvent` and `switchTenant`. `handleSelectTenantEvent` function
+takes the event name parameter and route parameter(after authorization the route to redirect to the home page of the new tenant).
+It then calls the `switchTenant` function. To use this functuonality you have to have `tenantId` 
+parameter in your routing configuration.
+
+To setup the functionality, add the following code in your root app.component.ts file:
+
+```ts
+ngOnInit(): void {
+    const homeRoute = `{your-home-page-tenant-route}`;
+
+    this.tenantManagerService.handleSelectTenantEvent(CoreServicesEventKeys.SwitchTenant, homeRoute);
+}
+```
+
+
+

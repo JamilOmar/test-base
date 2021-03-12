@@ -1,0 +1,41 @@
+$component-active-color: white;
+$primary: rgb(4, 106, 189);
+
+.ls-select-list {
+    display: flex;
+
+    .ls-select-list-list-container {
+        flex: 1 1 auto;
+
+        .ls-select-list-list {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+            min-height: 12rem;
+            max-height: 24rem;
+            line-height: 30px;
+        }
+
+        .ls-select-list-item {
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 5px;
+        }
+
+        .ls-select-list.ls-state-disabled .ls-select-list-item,
+        .ls-select-list.ls-state-disabled {
+            cursor: default;
+        }
+
+        .ls-select-list.ls-state-disabled .ls-select-list-list {
+            overflow: hidden;
+        }
+
+        .ls-highlight {
+            background-color: $primary;
+            color: $component-active-color;
+        }
+    }
+}

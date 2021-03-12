@@ -1,0 +1,14 @@
+src/
+test/
+config/
+vscode/
+*.md
+*.ts
+.yo-rc.json
+.npmignore
+.npmrc
+.prettierignore
+.prettierrc
+tsconfig.json
+tslint.build.json
+tslint.json

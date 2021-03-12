@@ -1,0 +1,13 @@
+<div class="ls-select-list">
+    <div class="ls-select-list-list-container">
+        <ul #listelement class="ls-select-list-list">
+            <ng-template ngFor let-item [ngForOf]="value" let-i="index" let-l="last">
+                <li class="ls-select-list-item" tabindex="0" [ngClass]="{'ls-highlight':isSelected(item)}"
+                    (click)="onItemClick($event,item,i)" 
+                    role="option" [attr.aria-selected]="isSelected(item)">
+                    <ng-container *ngTemplateOutlet="itemTemplate; context: {$implicit: item, index: i}"></ng-container>
+                </li>
+            </ng-template>
+        </ul>
+    </div>
+</div>

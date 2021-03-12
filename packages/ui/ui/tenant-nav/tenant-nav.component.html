@@ -1,0 +1,65 @@
+<div class="tenant-wrap">
+
+  <div class="tenant-placeholder"></div>
+  <div class="overlay" [class.overlay]="menuExpanded" (click)="showTenant(false)"></div>
+
+  <div class="tenant-main" [ngClass]="{expanded: menuExpanded}">
+    <div class="tenant-content">
+
+      <div class="tenant-item">
+        <span class="span-icon" (click)="toggle()"><i class="icon-lsi-menu"></i></span>
+        <span class="span-text">MENU</span>
+      </div>
+
+      <div [hidden]="showTenantMenu">
+
+        <div *ngFor="let item of links" [routerLink]="item.link" routerLinkActive="active" class="tenant-item"
+          tabindex="0">
+          <span class="span-icon"><i class="{{ item.icon }}"></i></span>
+          <span class="span-text">{{ item.text }}</span>
+        </div>
+
+        <div *ngFor="let item of apps | async" class="tenant-item"
+          [class.selected]="item.name === (selectedApp | async)?.name" tabindex="0" (click)="selectApp(item)"
+          title="{{ item.name }}">
+          <span class="span-icon logo">
+            <ngx-avatar class="avatar" size="40" round [name]="item.name" [src]="item.logo" cornerRadius="4">
+            </ngx-avatar>
+          </span>
+          <span class="span-text">{{ item.name }}</span>
+        </div>
+
+      </div>
+
+      <div [hidden]="!showTenantMenu">
+
+        <div class="tenant-item">
+          <div class="search-input-wrapper">
+            <i class="icon-lsi-search"></i>
+            <input class="search-input" placeholder="Search" [(ngModel)]="query" autocomplete="off">
+          </div>
+        </div>
+
+        <div *ngFor="let item of tenants | search:'tenant.text':query; let i=index" class="tenant-item"
+          [class.selected]="item.tenant.id === (selectedTenant| async)?.id" tabindex="0" (click)="selectTenant(item.tenant)" title="{{ item.tenant.text }}">
+          <span class="span-icon logo">
+            <ngx-avatar class="avatar" size="40" round [name]="item.tenant.text" [src]="item.tenant.logo" cornerRadius="4" [initialsSize]="item.logo.initialsSize" [textSizeRatio]="item.logo.textSizeRatio"></ngx-avatar>
+          </span>
+          <span class="span-text">{{ item.tenant.text }}</span>
+        </div>
+
+        <div class="tenant-item" (click)="viewAllTenants()">
+          <span class="span-text text-only">View All Teams</span><i class="icon-lsi-export"></i>
+        </div>
+      </div>
+
+      <div class="expand"></div>
+
+      <div class="tenant-item tenant-toggle" (click)="showTenant(true)">
+        <span class="span-icon"><i class="icon-lsi-research-teams"></i></span>
+        <span class="span-text">Research Teams</span>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,99 @@
+<div class="col profile">
+  <h1>{{ captions.title }}</h1>
+  <form [formGroup]="profileForm">
+    <div class="form-group">
+      <label>{{ captions.email }}</label>
+      <input type="text" class="form-control" disabled formControlName="email" placeholder="{{ captions.emailPlaceholder }}" />
+      <div class="invalid-feedback" *ngIf="profileForm.controls.email.invalid">{{ captions.emailMessage }}</div>
+    </div>
+    <div class="form-group row">
+      <div class="col-lg-6 col-md-12 col-sm-12">
+        <label>{{ captions.firstName }}</label>
+        <input
+          type="text" disabled
+          class="form-control"
+          formControlName="firstName"
+          (keyup)="updateDisplayName()"
+          placeholder="{{ captions.firstNamePlaceholder }}"
+        />
+        <div *ngIf="profileForm.controls.firstName.invalid">
+          <div class="invalid-feedback" *ngIf="profileForm.controls.firstName.errors.required">{{ captions.firstNameRequiredMessage }}</div>
+          <div class="invalid-feedback" *ngIf="profileForm.controls.firstName.errors.pattern">
+            {{ captions.specialCharacterErrorMessage }}
+          </div>
+          <div class="invalid-feedback" *ngIf="profileForm.controls.firstName.errors.maxlength">
+            {{ characterLimitMessage.replace('{characterLength}', fieldLengthLimits.FirstName.toString()) }}
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-12 col-sm-12">
+        <label>{{ captions.lastName }}</label>
+        <input
+          type="text" disabled
+          class="form-control"
+          formControlName="lastName"
+          (keyup)="updateDisplayName()"
+          placeholder="{{ captions.lastNamePlaceholder }}"
+        />
+        <div *ngIf="profileForm.controls.lastName.invalid">
+          <div class="invalid-feedback" *ngIf="profileForm.controls.lastName.errors.required">{{ captions.lastNameRequiredMessage }}</div>
+          <div class="invalid-feedback" *ngIf="profileForm.controls.lastName.errors.pattern">
+            {{ captions.specialCharacterErrorMessage }}
+          </div>
+          <div class="invalid-feedback" *ngIf="profileForm.controls.lastName.errors.maxlength">
+            {{ characterLimitMessage.replace('{characterLength}', fieldLengthLimits.LastName.toString()) }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>{{ captions.displayName }}</label>
+      <input type="text" class="form-control" formControlName="displayName" placeholder="{{ captions.displayNamePlaceholder }}" />
+      <div *ngIf="profileForm.controls.displayName.invalid">
+        <div class="invalid-feedback" *ngIf="profileForm.controls.displayName.errors.required">
+          {{ captions.displayNameRequiredMessage }}
+        </div>
+        <div class="invalid-feedback" *ngIf="profileForm.controls.displayName.errors.pattern">
+          {{ captions.specialCharacterErrorMessage }}
+        </div>
+        <div class="invalid-feedback" *ngIf="profileForm.controls.displayName.errors.maxlength">
+          {{ characterLimitMessage.replace('{characterLength}', fieldLengthLimits.DisplayName.toString()) }}
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>{{ captions.jobTitle }} <span class="sub-label">(Optional)</span></label>
+      <input type="text" class="form-control" formControlName="jobTitle" placeholder="{{ captions.jobTitlePlaceholder }}" />
+      <div *ngIf="profileForm.controls.jobTitle.invalid">
+        <div class="invalid-feedback" *ngIf="profileForm.controls.jobTitle.errors.pattern">
+          {{ captions.specialCharacterErrorMessage }}
+        </div>
+        <div class="invalid-feedback" *ngIf="profileForm.controls.jobTitle.errors.maxlength">
+          {{ characterLimitMessage.replace('{characterLength}', fieldLengthLimits.JobTitle.toString()) }}
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>{{ captions.organization }} <span class="sub-label">(Optional)</span></label>
+      <input type="text" class="form-control" formControlName="organization" placeholder="{{ captions.organizationPlaceholder }}" />
+      <div *ngIf="profileForm.controls.organization.invalid">
+        <div class="invalid-feedback" *ngIf="profileForm.controls.organization.errors.pattern">
+          {{ captions.specialCharacterErrorMessage }}
+        </div>
+        <div class="invalid-feedback" *ngIf="profileForm.controls.organization.errors.maxlength">
+          {{ characterLimitMessage.replace('{characterLength}', fieldLengthLimits.Organization.toString()) }}
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>{{ captions.groupTitle }}</label>
+      <input type="text" class="form-control" value="{{group}}" readonly />
+    </div>
+    <div class="d-flex justify-content-between">
+      <button class="btn btn-outline-secondary button-back" (click)="goToPreviousStep()">{{ captions.buttonBack }}</button>
+      <button class="btn btn-primary button-next" (click)="goToNextStep()" [disabled]="profileForm.invalid">
+        {{ captions.buttonNext }}
+      </button>
+    </div>
+  </form>
+</div>

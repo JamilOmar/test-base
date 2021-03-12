@@ -1,0 +1,145 @@
+$color-background: #2274a5;
+$font: Regular 82px/100px Nexa Light;
+$path-image-hexagon-top: '../../../../assets/img/welcome-bg-top.svg';
+$path-image-hexagon-bottom: '../../../../assets/img/welcome-bg-bottom.svg';
+
+.backgroud-hexagon {
+  background: url($path-image-hexagon-top) no-repeat padding-box, url($path-image-hexagon-bottom) no-repeat padding-box;
+  background-position-x: 14.9rem, -7.3rem;
+  background-position-y: -9.2rem, 25.1rem;
+  background-size: 60%, 70%;
+}
+
+.welcome-screen {
+  @extend .backgroud-hexagon;
+  background-color: $color-background;
+  height: 100%;
+  font: $font;
+  .icon {
+    font-size: 15rem;
+  }
+  .logo {
+    background-image: url('../../../../assets/img/metadata-logo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 35%;
+  }
+  .title {
+    font-size: 4.563rem;
+    font-weight: 300;
+    text-align: center;
+  }
+  margin: 0;
+  i:before {
+    width: 0;
+    display: contents;
+  }
+  .welcome-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .version-container {
+    position: absolute;
+    display: block;
+    bottom: 0.75rem;
+    left: 1.5rem;
+    .main-content {
+      font-size: 0.5rem;
+      color: white;
+      h1 {
+        font-size: 0.75rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .welcome-screen {
+    background-position-x: 6.9rem, -3.3rem;
+    background-position-y: -6.2rem, 27.1rem;
+    background-size: 70%, 80%;
+    .icon {
+      font-size: 12rem;
+    }
+    .logo {
+      font-size: 2.7rem;
+    }
+    .title {
+      font-size: 3.563rem;
+      font-weight: 300;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .welcome-screen {
+    background-position-x: 3.9rem, -6.3rem;
+    background-position-y: -6.2rem, 30.1rem;
+    background-size: 80%, 90%;
+    .icon {
+      font-size: 8rem;
+    }
+    .logo {
+      font-size: 2rem;
+    }
+    .title {
+      font-size: 2.563rem;
+      font-weight: 300;
+    }
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .welcome-screen {
+    height: 15rem;
+    background-position-x: 31.9rem, -3.3rem;
+    background-position-y: -6.2rem, -4.9vh;
+    background-size: 30%, 30%;
+    .icon {
+      font-size: 4rem;
+    }
+    .logo {
+      font-size: 2rem;
+    }
+    .title {
+      font-size: 2.563rem;
+      font-weight: 300;
+    }
+    .welcome-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .welcome-screen {
+    height: 15rem;
+    background-position-x: 16.9rem, -3.3rem;
+    background-position-y: -4.2rem, -5.9vh;
+    background-size: 40%, 40%;
+    .icon {
+      font-size: 4rem;
+    }
+    .logo {
+      font-size: 2rem;
+      width: 100%;
+      height: 100%;
+      background-size: 20%;
+    }
+    .title {
+      font-size: 2.563rem;
+      font-weight: 300;
+    }
+    .welcome-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

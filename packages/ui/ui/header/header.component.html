@@ -1,0 +1,35 @@
+<div class="header-content">
+
+  <div class="logo">
+    <ng-container *ngIf="config.logoComponent">
+      <ls-ui-custom-component class="dynamic-logo" [item]="config.logoComponent"></ls-ui-custom-component>
+    </ng-container>
+    <span>{{ config?.text }}</span>
+  </div>
+
+  <div class="header-parent">
+    <ng-container *ngTemplateOutlet="inner; context: { list: config.leftNavList }"></ng-container>
+    <ng-container *ngTemplateOutlet="inner; context: { list: config.centerNavList }"></ng-container>
+    <ng-container *ngTemplateOutlet="inner; context: { list: config.rightNavList }"></ng-container>
+  </div>
+</div>
+
+<ng-template #inner let-list="list">
+  <div class="header-group">
+    <div *ngFor="let item of list">
+      <div *ngIf="item.type === 'text'">{{ item.text }}</div>
+      <span class="header-right-icon" *ngIf="item.type === 'i'">
+        <i [className]="item.icon" (click)="clickItem(item)"></i>
+      </span>
+      <ng-container *ngIf="item.type === 'component'">
+        <ls-ui-custom-component [item]="item.component"></ls-ui-custom-component>
+      </ng-container>
+
+      <ls-ui-drop-down-menu [text]="item.text" [icon]="item.icon" [element]="item.element" [menu]="item.menu"
+        *ngIf="item.type === 'menu'">
+      </ls-ui-drop-down-menu>
+
+      <ls-ui-user-profile [links]="item.links" *ngIf="item.type === 'userProfile'"></ls-ui-user-profile>
+    </div>
+  </div>
+</ng-template>

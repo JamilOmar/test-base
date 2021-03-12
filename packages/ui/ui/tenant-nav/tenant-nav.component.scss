@@ -1,0 +1,162 @@
+$tenant-width-collapsed: 70px;
+$tenant-width-expanded: 400px;
+$icon-height: 20px;
+$icon-border-size: 3px;
+$icon-left-margin: -3px;
+$icon-right-margin: 5px;
+$icon-vertical-padding: 20px;
+$icon-font-size: 23px;
+$icon-logo-margin-offset: 5px;
+
+$text-only-offset: 23px + $icon-left-margin;
+$text-only-right-padding: 5px;
+
+$item-height: $icon-height + $icon-vertical-padding * 2;
+$icon-width: $tenant-width-collapsed - $icon-border-size * 2;
+
+$divider-size: 1px;
+$divider-margin: 8px;
+$divider-width-collapsed: $tenant-width-collapsed - $divider-margin * 2;
+$divider-width-expanded: $tenant-width-expanded - $divider-margin * 2;
+
+$background-color: #2c2c2c;
+$border-color: solid 1px #444444;
+$text-color: #aaaaaa;
+$text-color-selected: #ffffff;
+$overlay-color: rgba(0, 0, 0, 0.3);
+
+.tenant-wrap {
+    .tenant-placeholder {
+        width: $tenant-width-collapsed;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0px;
+        left: $tenant-width-expanded;
+        right: 0;
+        bottom: 0;
+        background-color: $overlay-color;
+        z-index: 2;
+    }
+
+    .tenant-main {
+        color: $text-color;
+        width: $tenant-width-collapsed;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 10;
+        background-color: $background-color;
+        overflow: hidden;
+        border-right: $border-color;
+        display: flex;
+        min-height: 800px;
+
+        &.expanded {
+            width: $tenant-width-expanded;
+            .tenant-content {
+                .divider {
+                    width: $divider-width-expanded;
+                }
+            }
+        }
+
+        .tenant-content {
+            z-index: 10;
+            width: $tenant-width-expanded;
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            &[hidden] {
+                display: none;
+            }
+            .divider {
+                margin-left: $divider-margin;
+                margin-right: $divider-margin;
+                width: $divider-width-collapsed;
+                border-top: $divider-size solid $text-color;
+
+                &.expanded {
+                    width: $divider-width-expanded;
+                }
+            }
+            .expand {
+                flex: 1;
+            }
+
+            .tenant-item {
+                &:focus {
+                    outline: 0px solid transparent;
+                }
+                height: $item-height;
+                display: flex;
+                align-items: center;
+                box-sizing: border-box;
+                border-left: $icon-border-size solid transparent;
+                color: $text-color;
+                cursor: pointer;
+
+                &:hover {
+                    color: $text-color-selected;
+                    border-left: $icon-border-size solid $text-color-selected;
+                }
+
+                &.selected {
+                    color: $text-color-selected;
+                    border-left: $icon-border-size solid $text-color-selected;
+                }
+
+                .span-text {
+                    &.text-only {
+                        margin-left: $text-only-offset;
+                        padding-right: $text-only-right-padding;
+                    }
+                }
+
+                .span-icon {
+                    display: block;
+                    width: $icon-width;
+                    text-align: center;
+                    font-size: $icon-font-size;
+                    margin: 0 $icon-right-margin 0 $icon-left-margin;
+
+                    &.logo {
+                        margin: 0 $icon-right-margin + $icon-logo-margin-offset 0 $icon-left-margin -
+                            $icon-logo-margin-offset;
+                    }
+
+                    i {
+                        width: inherit;
+                        display: inline-block;
+                    }
+                    ngx-avatar {
+                        margin: 0 16px 0 20px;
+                        display: block;
+                    }
+                }
+            }
+
+            .search-input-wrapper {
+                background: #454545;
+                margin: 0 1rem;
+                padding: 0.5rem;
+                border-radius: 5px;
+                width: 100%;
+
+                .search-input {
+                    background: transparent;
+                    border: none;
+                    font-size: 1.2rem;
+                    width: 90%;
+                    margin-left: 0.3rem;
+                    color: #aaa;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+        }
+    }
+}

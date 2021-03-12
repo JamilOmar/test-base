@@ -1,0 +1,26 @@
+@import "../scss/variables.scss";
+
+.ls-drop-menu {
+  .dropdown {
+    padding: 5px 25px;
+    color: $left-menu-text-color;
+    cursor: pointer;
+  }
+  .dropdown-menu {
+    color: $left-menu-text-color;
+    background-color: $main-background-color;
+    background-clip: padding-box;
+    border: 1px solid $left-menu-text-color;
+  }
+
+  a {
+    color: $left-menu-text-color;
+  }
+  a:hover {
+    color: black;
+  }
+
+  .header-right-text {
+    color: $header-text-color;
+  }
+}

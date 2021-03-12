@@ -1,0 +1,13 @@
+{
+    "ngPackage": {
+        "lib": {
+            "entryFile": "public_api.ts"
+        }
+    },
+    "peerDependencies": {
+        "@angular/common": ">=9.1.0",
+        "@angular/core": ">=9.1.0",
+        "@angular/forms": ">=9.1.0",
+        "rxjs": ">=6.5.4"
+    }
+}

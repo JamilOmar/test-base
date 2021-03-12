@@ -1,0 +1,65 @@
+$card-primary-color: rgb(4, 106, 189);
+$card-width: 500px;
+$card-height: 200px;
+$card-margin: 10px;
+$card-radius: 5px;
+
+.ls-card-container {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 10px;
+    align-content: flex-start;
+
+    .ls-card-parent {
+        margin: $card-margin;
+        position: relative;
+
+        &:focus {
+            outline: 0px solid transparent;
+        }
+
+        .ls-card {
+            position: relative;
+            border-radius: $card-radius;
+            height: $card-height;
+            width: $card-width;
+            cursor: pointer;
+            overflow: hidden;
+            -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box; /* Firefox, other Gecko */
+            box-sizing: border-box;
+            border: 1px solid lightgray; // todo: replace color with var
+        }
+
+        &.ls-card-highlight {
+            .ls-card-overlay {
+                display: block;
+                position: absolute;
+                z-index: 100;
+                top: 0;
+                left: 0;
+                width: $card-width;
+                height: $card-height;
+                background: rgba($card-primary-color, 0.4);
+                border-radius: $card-radius;
+            }
+
+            .ls-card {
+                border: 1px solid $card-primary-color;
+            }
+        }
+
+        .ls-card-label {
+            bottom: 0;
+            width: 100%;
+            left: 0;
+            border-radius: $card-radius;
+            text-align: left;
+            padding: 0px 10px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    }
+}

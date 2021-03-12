@@ -1,0 +1,43 @@
+@import "~bootstrap/scss/_functions.scss";
+@import "~bootstrap/scss/_variables.scss";
+@import "~bootstrap/scss/mixins/_breakpoints.scss";
+
+.tenant-access {
+  height: 100vh;
+}
+
+.container-fluid {
+  padding-left: 0;
+}
+
+.col-md-4 {
+  padding-right: 0;
+}
+
+.content-component {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-right: 5rem;
+  padding-left: 5rem;
+}
+
+@include media-breakpoint-up(xs) {
+  .content-component {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+@include media-breakpoint-up(sm) {
+  .content-component {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+@include media-breakpoint-up(md) {
+
+  .content-component {
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
+}

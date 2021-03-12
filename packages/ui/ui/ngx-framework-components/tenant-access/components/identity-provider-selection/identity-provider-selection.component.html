@@ -1,0 +1,12 @@
+<div>
+  <h1>How do you want your team members to login?</h1>
+
+  <form [formGroup]="formGroup">
+    <div class="provider-container">
+      <ls-mutlicheckbox [options]="allProviders" formControlName="providers" display="id" ></ls-mutlicheckbox>
+    </div>
+    <button (click)="goToPreviousStep()" class="btn btn-outline-primary mt-4">Back</button>
+    <button (click)="goToNextStep()" class="btn btn-primary float-right mt-4">Continue</button>
+  </form>
+
+</div>

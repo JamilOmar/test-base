@@ -1,0 +1,64 @@
+@import '../scss/variables.scss';
+
+.header-content {
+    * {
+        color: $header-text-color;
+    }
+
+    height: 74px;
+    background-color: $header-background-color;
+    flex: 1;
+    display: flex;
+    align-items: center;
+
+    .logo {
+        display: flex;
+        align-items: center;
+        font-size: 30px;
+
+        .dynamic-logo {
+            margin: 22px;
+        }
+    }
+
+    .header-parent {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex: 1;
+
+        .header-group {
+            display: flex;
+            align-items: center;
+            .profile-image {
+                width: 35px;
+            }
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin: 0;
+            z-index: 1;
+            list-style: none;
+            a {
+                text-decoration: none;
+                color: #777; // todo: var for color
+                font-family: sans-serif;
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+.header-group .header-right-icon {
+    font-size: 20px;
+    padding-right: 5px;
+    border-right: 1px solid #888; // todo: var for color
+    padding: 5px 25px;
+}
+
+.header-group > div:last-child > .header-right-icon {
+    border-right: none;
+}

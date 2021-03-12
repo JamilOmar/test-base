@@ -1,0 +1,25 @@
+.ls-tile-view-content {
+  background-color: white;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  min-height: 10vw;
+
+  .ls-tile {
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    min-height: 150px;
+    min-width: 150px;
+    height: 10vw;
+    width: 10vw;
+    margin: 1vw;
+    cursor: pointer;
+
+    &.selected {
+      border: 2px solid rgb(90, 163, 231);
+      background-color: rgb(211, 235, 243);
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "name": "@jamilomar/test-base",
+  "version": "0.0.0-development",
+  "scripts": {
+    "prerelease": "npm run build:full",
+    "release": "lerna publish from-package -- --registry http://localhost:4873/",
+    "eslint": "eslint -c .eslintrc.js --ext '.js,.ts' --report-unused-disable-directives .",
+    "eslint:fix": "npm run eslint -- --fix",
+    "semantic-release": "semantic-release",
+    "commitmsg": "commitlint -e $GIT_PARAMS",
+    "prettier": "prettier \"**/*.ts\" \"**/*.js\" \"**/*.md\"",
+    "prettier:check": "npm run prettier -- -l",
+    "prettier:cli": "npm run prettier -- -c",
+    "prettier:fix": "npm run prettier:cli -- --write",
+    "test:ui": "lerna run --scope @jamilomar/base-ui test",
+    "test:api": "lerna run --scope @jamilomar/services-logger test",
+    "test": "npm run test:ui && npm run test:api",
+    "build": "lerna run build --sort",
+    "build:full": "lerna link && npm run build",
+    "clean": "lerna run clean",
+    "postinstall": "lerna bootstrap",
+    "pretest": "npm run clean && npm run build:full"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.0.0",
+    "@commitlint/config-conventional": "^7.1.2",
+    "@loopback/eslint-config": "^9.0.2",
+    "@semantic-release/changelog": "^3.0.6",
+    "@semantic-release/exec": "^4.0.0",
+    "@semantic-release/git": "^8.0.0",
+    "typescript": "<3.9.0",
+    "eslint": "^7.21.0",
+    "lerna": "^4.0.0",
+    "husky": "^0.14.3",
+    "prettier": "^2.2.1",
+    "semantic-release": "^17.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JamilOmar/test-base.git"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  }
+}

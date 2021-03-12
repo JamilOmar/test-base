@@ -1,0 +1,6 @@
+<div class="breadcrumb-wrapper">
+  <ng-container *ngFor="let path of displayedPaths; index as i">
+    <span *ngIf="i" class="separator" [innerHtml]="separator"></span>
+    <span class="breadcrumb" (click)="navigate(i)">{{ path }} </span>
+  </ng-container>
+</div>
