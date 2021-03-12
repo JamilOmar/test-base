@@ -85,6 +85,5 @@
     "@angular/localize": "^9.1.13",
     "ngx-avatar": "^4.0.0",
     "tslib": "^1.9.0"
-  },
-  "gitHead": "3533afe5a367078d2dd23f1b5fa99befd26f8319"
+  }
 }
