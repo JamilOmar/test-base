@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.2.1 (2021-03-12)
+
+
+### Bug Fixes
+
+* new library ([0d24238](https://github.com/JamilOmar/test-base/commit/0d24238cee2e270f11b528d9bfdb6739bf415106))
+* repository url ([f0bc4bd](https://github.com/JamilOmar/test-base/commit/f0bc4bd17084e3bccdda7b0f6b102ec1eafe16da))
+
+
+
+
+
 # 0.2.0 (2021-03-12)
 
 

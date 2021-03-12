@@ -1,3 +1,20 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# 1.3.0 (2021-03-12)
+
+
+### Features
+
+* initial commit ([0e1e1ec](https://github.com/JamilOmar/test-base/commit/0e1e1ec1425323187d48241dabfd97518be92f7a))
+* references updated ([c94e923](https://github.com/JamilOmar/test-base/commit/c94e923fbc9e6c5eba2073d2f5af75c1c08604ed))
+
+
+
+
+
 ## [1.2.2](https://github.com/labshare/services-logger/compare/v1.2.1...v1.2.2) (2021-02-22)
 
 
