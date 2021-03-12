@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.3](https://github.com/JamilOmar/test-base/compare/my-lib@0.2.2...my-lib@0.2.3) (2021-03-12)
+
+
+### Bug Fixes
+
+* this is a demo for artem ([99b980b](https://github.com/JamilOmar/test-base/commit/99b980b8fa71c6941295381f236a7ee22cd3d36d))
+
+
+
+
+
 ## [0.2.2](https://github.com/JamilOmar/test-base/compare/my-lib@0.2.1...my-lib@0.2.2) (2021-03-12)
 
 

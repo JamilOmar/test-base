@@ -1,6 +1,6 @@
 {
   "name": "@labshare/base-ui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "bundles/labshare-base-ui.umd.js",
   "module": "fesm5/labshare-base-ui.js",
   "es2015": "fesm2015/labshare-base-ui.js",
