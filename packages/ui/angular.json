@@ -5,15 +5,15 @@
   "projects": {
     "@labshare/base-ui": {
       "projectType": "library",
-      "root": "ui",
+      "root": "",
       "sourceRoot": "ui",
       "prefix": "ls",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "ui/tsconfig.lib.json",
-            "project": "ui/ng-package.json"
+            "tsConfig": "tsconfig.lib.json",
+            "project": "ng-package.json"
           },
           "configurations": {
             "production": {

@@ -8,8 +8,8 @@
     "emitDecoratorMetadata": false,
     "experimentalDecorators": true,
     "moduleResolution": "node",
-    "outDir": "../build",
-    "rootDir": ".",
+    "outDir": "./build",
+    "rootDir": "ui",
     "lib": [
       "es2016",
       "dom"
@@ -18,7 +18,7 @@
     "types": [],
     "paths": {
       "@labshare/base-ui/*": [
-        "ui/*/public_api"
+        "ui/ui/*/public_api"
       ]
     }
   },
@@ -32,6 +32,6 @@
     "flatModuleId": "primeng"
   },
   "files": [
-    "./public_api.ts"
+    "./ui/public_api.ts"
   ]
 }
