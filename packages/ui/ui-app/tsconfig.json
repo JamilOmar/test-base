@@ -21,6 +21,9 @@
      ],
       "my-lib": [
         "../new-lib/src/public-api.ts"
+      ],
+      "base-common":[
+        "../../core/base-common"
       ]
     }    
   },

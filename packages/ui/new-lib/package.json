@@ -51,5 +51,8 @@
     "type": "git",
     "url": "https://github.com/JamilOmar/test-base.git"
   },
-  "gitHead": "96135f2f1db2429744792fc8f55eeffa6a1e18db"
+  "gitHead": "96135f2f1db2429744792fc8f55eeffa6a1e18db",
+  "dependencies": {
+    "base-common": "^1.0.0"
+  }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {Message} from 'base-common';
 @Component({
   selector: 'lib-my-lib',
   template: `
@@ -12,9 +12,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyLibComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    
+   }
+
+   public getMessage():Message{
+     return {name:'Paul'}
+   }
 
   ngOnInit(): void {
+    console.log(this.getMessage())
   }
 
 }
