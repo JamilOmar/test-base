@@ -1,7 +1,8 @@
 {
   "packages": [
-    "packages/ui/",
-    "packages/new-lib/",
+    "packages/ui/base-ui",
+    "packages/ui/new-lib",
+    "packages/ui/ui-app",
     "packages/api/services-logger"
 
   ],
