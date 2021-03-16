@@ -1,5 +1,6 @@
 {
   "packages": [
+    "packages/core/base-common",
     "packages/ui/base-ui",
     "packages/ui/new-lib",
     "packages/ui/ui-app",

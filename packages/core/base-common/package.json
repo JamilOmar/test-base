@@ -1,0 +1,31 @@
+{
+  "name": "base-common",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "Jamil Omar <jfalconi63@hotmail.com>",
+  "homepage": "https://github.com/JamilOmar/test-base#readme",
+  "license": "ISC",
+  "main": "dist/lib/index.js",
+  "types": "dist/lib/index.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JamilOmar/test-base.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist"
+  },
+  "bugs": {
+    "url": "https://github.com/JamilOmar/test-base/issues"
+  },
+  "dependencies": {
+    "typescript": "^4.2.3"
+  }
+}
